@@ -1,4 +1,4 @@
-## input type="checkbox" 일 경우, ng-true-value가 dynamic하게 값 변경이 안되는 경우
+## ng-true-value는 dynamic하게 값 변경이 안된다.
 http://stackoverflow.com/questions/24758681/angularjs-checkbox-dynamic-ng-true-value-expression
 ```
 Expression in the ng-true-value will be evaluated only once, so it won't be dynamic.
