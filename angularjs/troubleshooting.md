@@ -16,3 +16,13 @@ Expression in the ng-true-value will be evaluated only once, so it won't be dyna
     </label>
 ...(중략)...
 ```
+
+```
+...(중략)...
+if($scope.req.query_type_checker) {
+    $scope.req.query_type = queryType;  
+} else {
+    $scope.req.query_type = [];
+}
+...(중략)...
+```
