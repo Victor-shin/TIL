@@ -18,9 +18,22 @@ set hive.execution.engine=mr;
 
 ### #2 Use ORCFile
 ```
-SELECT A.customerID, A.name, A.age, A.address join
-B.role, B.department, B.salary
-ON A.customerID=B.customerID;
+CREATE TABLE A_ORC (
+customerID int, name string, age int, address string
+) STORED AS ORC tblproperties (“orc.compress" = “SNAPPY”);
+
+INSERT INTO TABLE A_ORC SELECT * FROM A;
+
+CREATE TABLE B_ORC (
+customerID int, role string, salary float, department string
+) STORED AS ORC tblproperties (“orc.compress" = “SNAPPY”);
+
+INSERT INTO TABLE B_ORC SELECT * FROM B;
+
+SELECT A_ORC.customerID, A_ORC.name,
+A_ORC.age, A_ORC.address join
+B_ORC.role, B_ORC.department, B_ORC.salary
+ON A_ORC.customerID=B_ORC.customerID;
 ```
 
 ### #3 Use Vectorization
