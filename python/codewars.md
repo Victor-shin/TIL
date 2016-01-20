@@ -15,6 +15,12 @@ def capitals(word):
     return result
 ```
 
+### Good case
+```
+def capitals(word):
+    return [i for (i, c) in enumerate(word) if c.isupper()]
+```
+
 ## 7kyu Money, Money, Money
 ### Details
 ```
