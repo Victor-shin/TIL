@@ -12,15 +12,13 @@ Note that the principal is not taxed but only the year's accrued interest
 def calculate_years(principal, interest, tax, desired, year = 0):
     if principal == desired :
         return 0
-        
-    year += 1        
-    yi = principal * interest
-    yt = yi * tax
-    
-    principal = principal + (yi - yt)    
 
-    if principal >= desired :
-        return year
-    else :
-        return calculate_years(principal, interest, tax, desired, year)
+    while principal < desired :
+        year += 1        
+        yi = principal * interest
+        yt = yi * tax
+
+        principal += (yi - yt)    
+
+    return year
 ```
