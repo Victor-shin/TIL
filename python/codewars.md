@@ -8,7 +8,7 @@ Write a function that takes a single string (word) as argument. The function mus
 ```
 def capitals(word):
     result = []
-    for index, str in enumerate(list(word), start = 0) :
+    for index, str in enumerate(list(word)) :
         if str.isupper() :
             result.append(index)
                 
