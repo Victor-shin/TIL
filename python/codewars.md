@@ -1,3 +1,20 @@
+## Find the capitals
+### Details
+```
+Write a function that takes a single string (word) as argument. The function must return an ordered list containing the indexes of all capital letters in the string.
+```
+
+### My solution
+```
+def capitals(word):
+    result = []
+    for index, str in enumerate(list(word), start = 0) :
+        if str.isupper() :
+            result.append(index)
+                
+    return result
+```
+
 ## 7kyu Money, Money, Money
 ### Details
 ```
