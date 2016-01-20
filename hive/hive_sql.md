@@ -17,6 +17,15 @@ SELECT null, b, SUM( c ) FROM tab1 GROUP BY b
 SELECT a, b, SUM( c ) FROM tab1 GROUP BY a, b GROUPING SETS ( (a,b), a)
 ```
 
+### Grouping__ID function
+GROUPING SETS 문으로 인해서 NULL값이 들어가야 하는 필드에 이미 NULL 값을 가지고 있었다면, 의도한 대로 동작하지 않을 것이다.
+이때 GROUPING__ID 필드를 통해 구분할 수 있다.
+
+예시
+```
+SELECT key, value, GROUPING__ID, count(*) from T1 GROUP BY key, value WITH ROLLUP
+```
+
 ### Cubes and Rollups
 CUBE/ROLLUP은 오직 GROUP BY와 함께만 쓰일 수 있다.
 CUBE는 모든 가능한 조합의 셋을 만든다.
