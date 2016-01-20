@@ -1,4 +1,4 @@
-## Find the capitals
+## [7kyu] Find the capitals
 ### Details
 ```
 Write a function that takes a single string (word) as argument. The function must return an ordered list containing the indexes of all capital letters in the string.
@@ -21,7 +21,7 @@ def capitals(word):
     return [i for (i, c) in enumerate(word) if c.isupper()]
 ```
 
-## 7kyu Money, Money, Money
+## [7kyu] Money, Money, Money
 ### Details
 ```
 Mr. Scrooge has a sum of money 'P' that wants to invest, and he wants to know how many years 'Y' this sum has to be kept in the bank in order for this sum of money to amount to 'D'.
