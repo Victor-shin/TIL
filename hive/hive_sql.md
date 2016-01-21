@@ -7,9 +7,10 @@ GROUPING SETS은 GROUP BY가 되는 단위를 그룹단위로 지정해서 그�
 
 #### 일반적으로 사용되는 GROUP BY 예시
 ```
-SELECT a, null, SUM( c ) FROM tab1 GROUP BY a
+SELECT a, b, SUM( c ) FROM tab1 GROUP BY a, b
 UNION
-SELECT null, b, SUM( c ) FROM tab1 GROUP BY b
+SELECT a, null, SUM( c ) FROM tab1 GROUP BY a
+
 ```
 
 #### 위와 동일한 효과를 가지게 되는 GROUPING SETS 예시
