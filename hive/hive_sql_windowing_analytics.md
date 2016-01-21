@@ -3,8 +3,10 @@ https://cwiki.apache.org/confluence/display/Hive/LanguageManual+WindowingAndAnal
 
 
 ###Windowing functions
-##### LEAD
-##### LAG
+##### LEAD, LAG
+https://awhan.wordpress.com/2015/11/25/apache-hive-windowing-functions-lag-and-lead/
+ROW기준으로 LAG함수는 이전 행의 값을 가져올 수 있고, LEAD는 다음행의 값을 가져올 수 있다.
+
 ##### FIRST_VALUE
 ##### LAST_VALUE
 
@@ -30,9 +32,11 @@ WINDOW w AS (PARTITION BY c ORDER BY d ROWS UNBOUNDED PRECEDING)
 ```
 
 ### Analytics functions
-##### RANK
 ##### ROW_NUMBER
-##### DENSE_RANK
+##### RANK, , DENSE_RANK
+순위를 매길때 RANK는 등수에 2명이상 존재하면, 다음 등수에 중복되는 수를 건너뛴 등수를 넣는다. 
+예를들어 2등이 2명이면 3등없이, 바로 4등이 된다.
+http://thehobt.blogspot.kr/2009/02/rownumber-rank-and-denserank.html
 ##### CUME_DIST
 ##### PERCENT_RANK
 ##### NTILE
