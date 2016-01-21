@@ -1,4 +1,4 @@
-## [7kyu] 
+## [7kyu] Complementary DNA
 ### Details
 ```
 Description:
