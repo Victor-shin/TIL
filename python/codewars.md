@@ -16,11 +16,10 @@ DNA_strand ("GTAT") # return "CATA"
 
 ### My solution
 ```
+code = {'A': 'T', 'T': 'A', 'G': 'C', 'C': 'G'}
+
 def DNA_strand(dna):
-    
     result = []
-    code = {'A': 'T', 'T': 'A', 'G': 'C', 'C': 'G'}
-    
     for c in list(dna):
         result.append(code.get(c))
     
