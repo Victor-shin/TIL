@@ -39,7 +39,6 @@ WINDOW w AS (PARTITION BY c ORDER BY d ROWS UNBOUNDED PRECEDING)
 
 
 ### Examples
-There can be multiple OVER clauses in a single query.
 
 ### 기타 정리
 ##### rank() over partition by 구문과 grouping set과 함께 사용도 가능하다.
