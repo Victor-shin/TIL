@@ -33,7 +33,7 @@ WINDOW w AS (PARTITION BY c ORDER BY d ROWS UNBOUNDED PRECEDING)
 
 ### Analytics functions
 ##### ROW_NUMBER
-##### RANK, , DENSE_RANK
+##### RANK, DENSE_RANK
 순위를 매길때 RANK는 등수에 2명이상 존재하면, 다음 등수에 중복되는 수를 건너뛴 등수를 넣는다. 
 예를들어 2등이 2명이면 3등없이, 바로 4등이 된다.
 http://thehobt.blogspot.kr/2009/02/rownumber-rank-and-denserank.html
