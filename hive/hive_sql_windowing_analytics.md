@@ -46,6 +46,27 @@ http://thehobt.blogspot.kr/2009/02/rownumber-rank-and-denserank.html
 
 ### 기타 정리
 ##### rank() over partition by 구문과 grouping set과 함께 사용도 가능하다.
+샘플쿼리 
 ```
-~
+-- CLICK COLLECTION TOP10 FINAL
+select category, gender, 
+       MIN(IF(rank = 1, discode, NULL)) as discode_1,
+       MIN(IF(rank = 1, discode_cnt, NULL)) as discode_cnt_1,
+       MIN(IF(rank = 2, discode, NULL)) as discode_2,
+       MIN(IF(rank = 2, discode_cnt, NULL)) as discode_cnt_2       
+  from (
+        select category, gender, discode, discode_cnt,
+               rank() over (partition by category, gender order by category, gender, discode_cnt desc, discode) as rank
+          from (
+                select category, gender, discode, count(*) as discode_cnt
+                  from test_rank
+                 group by category, gender, discode    
+                          grouping sets(
+                              (category, gender, discode),
+                              (category, discode)
+                          )
+               ) x
+       ) y
+ group by category, gender 
+; 
 ```
