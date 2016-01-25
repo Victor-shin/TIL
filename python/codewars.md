@@ -1,5 +1,62 @@
+##
+### Details
+
+### My solution
+```
+def credit(num):
+    if not str(num).isdigit():
+        return "Invalid"
+        
+    card_rules = [
+        ('Discover', [16], ('6011')),
+        ('AMEX', [15], ('34', '37')),
+        ('MasterCard', [16], ('51', '52', '53', '54', '55')),
+        ('VISA', [13, 16], ('4'))
+    ]
+    
+    s = str(num)
+    l = len(s)
+    for rule in rules:
+        if l in rule[1] and s.startswith(rule[2]):
+            return rule[0]
+    
+    return "Invalid"
+```
+
+### Good case #1
+```
+import re
+
+def credit(num):
+    num = str(num)
+    if re.search(r'^6011\d{12}$', num):
+        return 'Discover'
+    elif re.search(r'^(34|37)\d{13}$', num):
+        return 'AMEX'
+    elif re.search(r'^5[1-5]\d{14}$', num):
+        return 'MasterCard'
+    elif re.search(r'^4(\d{12}|\d{15})$', num):
+        return 'VISA'
+    else:
+        return "Invalid"
+```
+
+### Good case #2
+```
+def credit(num):
+    if str(num).startswith('6011') and len(str(num)) == 16:
+        return 'Discover'
+    elif str(num).startswith(('34', '37')) and len(str(num)) == 15:
+        return 'AMEX'
+    elif str(num).startswith(('51', '52', '53', '54', '55')) and len(str(num)) == 16:
+        return 'MasterCard'
+    elif str(num).startswith('4') and (len(str(num)) == 13 or len(str(num)) == 16):
+        return 'VISA'
+    return 'Invalid'
+```
+
 ## Invalid Input - Error Handling #1
-## Details
+### Details
 ```
 Error Handling is very important in coding. Most error handling seems to be overlooked or not implemented properly.
 Task
