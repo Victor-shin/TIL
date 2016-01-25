@@ -1,3 +1,34 @@
+## Invalid Input - Error Handling #1
+## Details
+```
+Error Handling is very important in coding. Most error handling seems to be overlooked or not implemented properly.
+Task
+
+Your task is to implement a function which is expected to take a string and return an object containing the properties vowels and consonants The vowels property must contain the total count of vowels ('y' in this case is not a vowel), and consonants are any other letters, you must also trim any spaces. Don't forget to handle invalid input, though you must always return valid output.
+```
+
+### My solution
+```
+def get_count(words = ''):
+    v, c = 0, 0
+    if type(words) in (str, unicode) and len(words):
+        v = len([x for x in words if x.isalpha() and x.lower() in 'aeiou'])
+        c = len([x for x in words if x.isalpha() and x.lower() not in 'aeiou'])
+        
+    return {'vowels': v, 'consonants': c}
+```
+
+### Good case
+```
+def get_count(words=""):
+    if not isinstance(words, str):
+        return {'vowels':0,'consonants':0}
+    letter = "".join([c.lower() for c in words if c.isalpha()])
+    vowel = "".join([c for c in letter if c in 'aeiou'])
+    consonant = "".join([c for c in letter if c not in 'aeiou']) 
+    return {'vowels':len(vowel),'consonants':len(consonant)}
+```
+    
 ## Sum of numerous arguments
 ### Details
 ```
