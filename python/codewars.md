@@ -1,5 +1,5 @@
 ## Credit Card Validifier
-### Details
+##### Details
 ```
 Make a program that sees if a credit card number is valid or not. Also the program should tell you what type of credit card it is if it is valid.
 
@@ -11,7 +11,7 @@ Ex: Input: 6011364837263748 --> Output: "Discover" Ex: Input: 5318273647283745 -
 
 ```
 
-### My solution
+##### My solution
 ```
 def credit(num):
     if not str(num).isdigit():
