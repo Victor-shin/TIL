@@ -33,7 +33,7 @@ def credit(num):
     return "Invalid"
 ```
 
-### Good case #1
+##### Good case #1
 ```
 import re
 
@@ -51,7 +51,7 @@ def credit(num):
         return "Invalid"
 ```
 
-### Good case #2
+##### Good case #2
 ```
 def credit(num):
     if str(num).startswith('6011') and len(str(num)) == 16:
@@ -66,7 +66,7 @@ def credit(num):
 ```
 
 ## Invalid Input - Error Handling #1
-### Details
+##### Details
 ```
 Error Handling is very important in coding. Most error handling seems to be overlooked or not implemented properly.
 Task
@@ -74,7 +74,7 @@ Task
 Your task is to implement a function which is expected to take a string and return an object containing the properties vowels and consonants The vowels property must contain the total count of vowels ('y' in this case is not a vowel), and consonants are any other letters, you must also trim any spaces. Don't forget to handle invalid input, though you must always return valid output.
 ```
 
-### My solution
+##### My solution
 ```
 def get_count(words = ''):
     v, c = 0, 0
@@ -85,7 +85,7 @@ def get_count(words = ''):
     return {'vowels': v, 'consonants': c}
 ```
 
-### Good case
+##### Good case
 ```
 def get_count(words=""):
     if not isinstance(words, str):
@@ -97,7 +97,7 @@ def get_count(words=""):
 ```
     
 ## Sum of numerous arguments
-### Details
+##### Details
 ```
 After calling the function findSum() with any number of non-negative integer arguments, it should return the sum of all those arguments. If no arguments are given, the function should return 0, if negative arguments are given, it should return -1.
 
@@ -109,7 +109,7 @@ find_sum();        # returns 0
 Hint: research the arguments object on google or read Chapter 4 from Eloquent Javascript
 ```
 
-### My solution
+##### My solution
 ```
 def find_sum(*args):
     sum = 0
@@ -121,14 +121,14 @@ def find_sum(*args):
     return sum
 ```
 
-### Good case
+##### Good case
 ```
 def find_sum(*args):
     return -1 if any(x < 0 for x in args) else sum(args)
 ```
 
 ## [7kyu] Complementary DNA
-### Details
+##### Details
 ```
 Description:
 
@@ -143,13 +143,13 @@ DNA_strand ("ATTGC") # return "TAACG"
 DNA_strand ("GTAT") # return "CATA"
 ```
 
-### My solution
+##### My solution
 ```
 def DNA_strand(dna):
     return ''.join([{'A': 'T', 'T': 'A', 'G': 'C', 'C': 'G'}[c] for c in dna])
 ```
 
-### Good case
+##### Good case
 ```
 import string
 def DNA_strand(dna):
@@ -159,12 +159,12 @@ def DNA_strand(dna):
 ```
 
 ## [7kyu] Find the capitals
-### Details
+##### Details
 ```
 Write a function that takes a single string (word) as argument. The function must return an ordered list containing the indexes of all capital letters in the string.
 ```
 
-### My solution
+##### My solution
 ```
 def capitals(word):
     result = []
@@ -175,14 +175,14 @@ def capitals(word):
     return result
 ```
 
-### Good case
+##### Good case
 ```
 def capitals(word):
     return [i for (i, c) in enumerate(word) if c.isupper()]
 ```
 
 ## [7kyu] Money, Money, Money
-### Details
+##### Details
 ```
 Mr. Scrooge has a sum of money 'P' that wants to invest, and he wants to know how many years 'Y' this sum has to be kept in the bank in order for this sum of money to amount to 'D'.
 
@@ -190,7 +190,7 @@ The sum is kept for 'Y' years in the bank where interest 'I' is paid yearly, and
 
 Note that the principal is not taxed but only the year's accrued interest
 ```
-### My solution
+##### My solution
 ```
 def calculate_years(principal, interest, tax, desired, year = 0):
     if principal == desired :
@@ -206,7 +206,7 @@ def calculate_years(principal, interest, tax, desired, year = 0):
     return year
 ```
 
-### Good case
+##### Good case
 ```
 from math import ceil, log
 
