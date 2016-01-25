@@ -7,7 +7,7 @@ def credit(num):
     if not str(num).isdigit():
         return "Invalid"
         
-    card_rules = [
+    rules = [
         ('Discover', [16], ('6011')),
         ('AMEX', [15], ('34', '37')),
         ('MasterCard', [16], ('51', '52', '53', '54', '55')),
