@@ -68,7 +68,7 @@ def credit(num):
     return 'Invalid'
 ```
 
-##### sample unittest
+##### Sample unittest
 ```
 #!/usr/bin/python
 
