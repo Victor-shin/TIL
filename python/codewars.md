@@ -11,6 +11,9 @@ Ex: Input: 6011364837263748 --> Output: "Discover" Ex: Input: 5318273647283745 -
 
 ```
 
+##### TIP
+startswith에 tuple이 올 수 있다! 
+
 ##### My solution
 ```
 def credit(num):
