@@ -68,6 +68,55 @@ def credit(num):
     return 'Invalid'
 ```
 
+##### sample unittest
+```
+#!/usr/bin/python
+
+import re
+import unittest
+
+class Credit():
+    def credit(self, num):
+        discover = re.compile("^6011[0-9]{12}$")
+        amex = re.compile("^(34|37)\d{13}$")
+        master = re.compile("^5[1-5]\d{14}")
+        visa = re.compile("^4\d{12,15}$")
+
+        #if (discover.search(str(num)) != None):
+        if (discover.search(str(num))):
+            return "Discover"
+        elif (amex.search(str(num))):
+            return "AMEX"
+        elif (master.search(str(num))):
+            return "MasterCard"
+        elif (visa.search(str(num))):
+            return "VISA"
+        else:
+            return "Invalid"
+
+class Test(unittest.TestCase):
+    def test_credit(self):
+        c = Credit()
+        self.assertEquals(c.credit(6011364837263748), "Discover")
+        self.assertEquals(c.credit(5318273647283745), "MasterCard")
+        self.assertEquals(c.credit(12345678910), "Invalid")
+        self.assertEquals(c.credit(371236473823676), "AMEX")
+        self.assertEquals(c.credit(4128374839283), "VISA")
+        self.assertEquals(c.credit(6011253648736259), "Discover")
+        self.assertEquals(c.credit(6011728364710763), "Discover")
+        self.assertEquals(c.credit(341627384637453), "AMEX")
+        self.assertEquals(c.credit(371628394536298), "AMEX")
+        self.assertEquals(c.credit(1739712491524), "Invalid")
+        self.assertEquals(c.credit(12984580723695), "Invalid")
+        self.assertEquals(c.credit(5117283748253647), "MasterCard")
+        self.assertEquals(c.credit(4142593846732), "VISA")
+        self.assertEquals(c.credit(5417283945362734), "MasterCard")
+        self.assertEquals(c.credit(4152637483526371), "VISA")
+
+if __name__ == '__main__':
+    unittest.main()
+```
+
 ## Invalid Input - Error Handling #1
 ##### Details
 ```
