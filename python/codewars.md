@@ -23,6 +23,7 @@ def flatten(l):
 ##### TIP
 timeit.Timer 라는 것도 있구나 ~
 좋구나 ~
+https://docs.python.org/2/library/timeit.html
 ```
 >>> timeit.Timer(
 ...         'reduce(lambda x,y: x+y,l)',
