@@ -1,3 +1,47 @@
+## Flattening Lists
+##### Details
+```
+Description:
+
+In this Kata you will create a function that takes a list of lists as an input and returns a flat list.
+```
+
+##### My solution (Good case)
+```
+def flatten(l):
+  return [item for sublist in l for item in sublist]
+```
+
+##### Good case
+```
+from itertools import chain
+
+def flatten(l):
+  return list(chain(*l))
+```
+
+##### TIP
+timeit.Timer 라는 것도 있구나 ~
+좋구나 ~
+```
+>>> timeit.Timer(
+...         'reduce(lambda x,y: x+y,l)',
+...         'l=[[1, 2, 3], [4, 5, 6, 7, 8], [1, 2, 3, 4, 5, 6, 7]] * 10'
+...     ).timeit()
+13.073173999786377
+>>> timeit.Timer(
+...         '[item for sublist in l for item in sublist]',
+...         'l=[[1, 2, 3], [4, 5, 6, 7, 8], [1, 2, 3, 4, 5, 6, 7]] * 10'
+...     ).timeit()
+
+7.3597259521484375
+>>> timeit.Timer(
+...         'sum(l, [])',
+...         'l=[[1, 2, 3], [4, 5, 6, 7, 8], [1, 2, 3, 4, 5, 6, 7]] * 10'
+...     ).timeit()
+9.677650928497314
+```
+
 ## Find the next perfect square!
 ##### Details
 ```
