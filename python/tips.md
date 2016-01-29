@@ -6,6 +6,7 @@
 - https://docs.python.org/2/library/timeit.html
 
 - 로컬에서(victor.shin macbook pro) 돌린 결과
+-- lambda
 ```
 >>> timeit.Timer(
 ...         'reduce(lambda x,y: x+y,l)',
