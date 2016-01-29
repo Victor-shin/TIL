@@ -32,4 +32,4 @@
 9.677650928497314
 ```
 
-##### startswith에 tuple이 올 수 있다! 
+##### str.startswith()의 파라미터로 tuple이 올 수 있다! 
