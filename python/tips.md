@@ -3,7 +3,9 @@
 ##### timeit.Timer
 timeit.Timer 라는 것도 있구나 ~
 좋구나 ~
-https://docs.python.org/2/library/timeit.html
+- https://docs.python.org/2/library/timeit.html
+
+- 로컬에서(victor.shin macbook pro) 돌린 결과
 ```
 >>> timeit.Timer(
 ...         'reduce(lambda x,y: x+y,l)',
