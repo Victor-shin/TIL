@@ -1,7 +1,7 @@
 ## TIP
 
 ##### timeit.Timer
-성능측정
+성능측정함수. timeit()에 횟수를 명시하지 않으면 디폴트로 1,000,000회 반복한다.
 (timeit.Timer 라는 것도 있구나 ~ 좋구나 ~)
 - https://docs.python.org/2/library/timeit.html
 
