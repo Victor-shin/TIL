@@ -20,29 +20,6 @@ def flatten(l):
   return list(chain(*l))
 ```
 
-##### TIP
-timeit.Timer 라는 것도 있구나 ~
-좋구나 ~
-https://docs.python.org/2/library/timeit.html
-```
->>> timeit.Timer(
-...         'reduce(lambda x,y: x+y,l)',
-...         'l=[[1, 2, 3], [4, 5, 6, 7, 8], [1, 2, 3, 4, 5, 6, 7]] * 10'
-...     ).timeit()
-13.073173999786377
->>> timeit.Timer(
-...         '[item for sublist in l for item in sublist]',
-...         'l=[[1, 2, 3], [4, 5, 6, 7, 8], [1, 2, 3, 4, 5, 6, 7]] * 10'
-...     ).timeit()
-
-7.3597259521484375
->>> timeit.Timer(
-...         'sum(l, [])',
-...         'l=[[1, 2, 3], [4, 5, 6, 7, 8], [1, 2, 3, 4, 5, 6, 7]] * 10'
-...     ).timeit()
-9.677650928497314
-```
-
 ## Find the next perfect square!
 ##### Details
 ```
@@ -107,9 +84,6 @@ Discover starts with 6011 and has 16 digits, AMEX starts with 34 or 37 and has 1
 Ex: Input: 6011364837263748 --> Output: "Discover" Ex: Input: 5318273647283745 --> Output: "MasterCard" Ex: Input: 12345678910 --> Output: "Invalid" Ex: Input: 371236473823676 --> Output: "AMEX" Ex: Input: 4128374839283 --> Output: "VISA"
 
 ```
-
-##### TIP
-startswith에 tuple이 올 수 있다! 
 
 ##### My solution
 ```
