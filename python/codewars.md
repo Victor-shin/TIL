@@ -1,8 +1,29 @@
+## Insert dashes
+##### Details
+```
+Write a function insertDash(num) that will insert dashes ('-') between each two odd numbers in num. For example: if num is 454793 the output should be 4547-9-3. Don't count zero as an odd number.
+```
+
+##### My solution
+```
+import re
+
+def insert_dash(num):
+    p = re.compile(r'(1|3|5|7|9)(1|3|5|7|9)')
+    return re.sub(p, r'\1-\2', re.sub(p, r'\1-\2', str(num)))
+```
+
+##### Good case
+```
+import re
+
+def insert_dash(num):
+    return re.sub(r'([13579])(?=[13579])', r'\1-', str(num))
+```
+
 ## Flattening Lists
 ##### Details
 ```
-Description:
-
 In this Kata you will create a function that takes a list of lists as an input and returns a flat list.
 ```
 
