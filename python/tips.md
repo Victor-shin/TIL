@@ -32,4 +32,8 @@
 9.677650928497314
 ```
 
-##### str.startswith()의 파라미터로 tuple이 올 수 있다! 
+##### String type
+str.startswith()의 파라미터로 tuple이 올 수 있다! 
+
+#### REGEXP
+(?= re)	Specifies position using a pattern. Doesn't have a range.
