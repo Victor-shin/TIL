@@ -37,3 +37,11 @@ str.startswith()의 파라미터로 tuple이 올 수 있다!
 
 #### REGEXP
 (?= re)	Specifies position using a pattern. Doesn't have a range.
+```
+import re
+
+def insert_dash(num):
+    return re.sub(r'([13579])(?=[13579])', r'\1-', str(num))
+```
+"13579"를 넣으면 "1-3-5-7-9"로 나온다.
+
