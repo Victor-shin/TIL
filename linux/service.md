@@ -54,7 +54,6 @@ esac
 exit 0
 ```
 
-
 ## etc
 ##### nohup
 ```
