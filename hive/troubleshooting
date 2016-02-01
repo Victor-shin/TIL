@@ -1,4 +1,4 @@
-- export
+##   export
 beeline을 통해서 table을 export가 동작하지 않는다.
 상황은 쿼리가 복잡해서 'set'을 통해서 hive query 환경 설정을 변경하였다.
 ```
