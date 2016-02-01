@@ -56,14 +56,14 @@ exit 0
 
 
 ## etc
-service등록해서 서비스 하기전에 테스트 용도로만 프로세스를 띄워서 실행하기 위한 방법으로
-nohup을 사용해서 띄울 수 있다.
-(nodejs서버의 경우 pm2를 사용해서 띄우면 된다.)
-
+##### nohup
 ```
-- nohup
+- nohup?
 hang-up signal이 와도 동작하기 때문에 터미널 연결이 끊어져도 실행을 멈추지 않습니다.
 ```
+
+service등록해서 서비스 하기전에 테스트 용도로만 프로세스를 띄워서 실행하기 위한 방법으로
+nohup을 사용해서 띄울 수 있다.
 
 예전에는 백그라운드로 실행 시키면 터미널 연결이 끊어져도 백그라운드로 실행이 되었으나 최근에는 그렇지 않은 경우도 있다.
 확인 방법은 다음과 같다.
@@ -71,3 +71,7 @@ hang-up signal이 와도 동작하기 때문에 터미널 연결이 끊어져도
 [ testserver ~]$ shopt | grep huponexit
 huponexit      	off
 ```
+
+##### node
+- pm2
+- foreverjs
