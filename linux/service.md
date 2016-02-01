@@ -1,7 +1,8 @@
-## linux tomcat을 service로 등록해보자. 
+## linux에서 간단한 서비스(service)를 등록해보자. 
 
 - 출처 : http://roughexistence.tistory.com/125
 
+- tomcat의 예
 ```
 #!/bin/sh
 
