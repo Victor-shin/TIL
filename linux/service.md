@@ -71,4 +71,3 @@ hang-up signal이 와도 동작하기 때문에 터미널 연결이 끊어져도
 [ testserver ~]$ shopt | grep huponexit
 huponexit      	off
 ```
-huponexit
