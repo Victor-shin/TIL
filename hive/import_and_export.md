@@ -12,8 +12,7 @@ STORED AS TEXTFILE
 EXPORT TABLE [테이블명] to '[HDFS 디렉토리 경로]';
 ```
 
-
-### CSV 파일 import
+## CSV 파일 import
 ```
 LOAD DATA INPATH '[로컬 화일]' INTO TABLE [테이블명];
 ```
