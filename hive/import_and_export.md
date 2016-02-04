@@ -1,4 +1,4 @@
-## CSV로 타입으로 export해보자.
+## CSV로 타입으로 EXPORT해보자.
 ##### 테이블 생성1
 ```
 CREATE TABLE test_csv (
@@ -22,7 +22,7 @@ SELECT ...(생략)...
 EXPORT TABLE [테이블명] to '[HDFS 디렉토리 경로]';
 ```
 
-## CSV 파일 import
+## CSV 파일 IMPORT
 ```
 LOAD DATA INPATH '[로컬 화일]' INTO TABLE [테이블명];
 ```
