@@ -36,14 +36,13 @@ def find_prime(start, end):
                 return False
         return True
 
-
     result = []
     for x in range(start, end + 1):
         if is_prime(x):
             result.append(x)
 
-    return result
-
+    return None if result == [] else result
+    
 if __name__ == '__main__':
     print(find_prime(2, 10))
 ```
