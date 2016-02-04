@@ -1,4 +1,7 @@
 ## Find primes
+##### URL
+http://www.codewars.com/kata/5681bc8d17af37f50e000015/train/javascript
+
 ##### Details
 ```
 Your task is to take a given range and return an array of the prime numbers in that range.
