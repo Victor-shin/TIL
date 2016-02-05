@@ -1,6 +1,8 @@
 ## TIP
 ##### python 스러운 문법이 뭐가 있을까? 계속 정리해보자
 - expression if expression else expression
+- 다음 URL 참고. (좋다)
+http://docs.python-guide.org/en/latest/writing/style/
 
 ##### timeit.Timer
 성능측정함수. timeit()에 횟수를 명시하지 않으면 디폴트로 1,000,000회 반복한다.
