@@ -1,5 +1,5 @@
 ## TIP
-##### python 스러운 문법이 뭐가 있을까? (계속 정리해보자)
+##### python 스러운 문법이 뭐가 있을까? 계속 정리해보자
 - expression if expression else expression
 
 ##### timeit.Timer
