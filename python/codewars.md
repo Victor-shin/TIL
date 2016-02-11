@@ -18,7 +18,7 @@ def amicable_numbers(n1,n2):
 ```
 
 ##### Good case
-```
+```python
 def proper_divisors_sum(n):
     return sum(a for a in xrange(1, n) if not n % a)
 
