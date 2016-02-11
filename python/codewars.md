@@ -9,7 +9,7 @@ Derive function amicableNumbers(num1, num2) which returns true/True if pair num1
 ```
 
 ##### My solution
-```
+```python
 def amicable_numbers(n1,n2):
     def sum_divisor(n):
         return sum([x for x in range(1, n) if not (n % x)])
