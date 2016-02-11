@@ -11,7 +11,10 @@ Derive function amicableNumbers(num1, num2) which returns true/True if pair num1
 ##### My solution
 ```
 def amicable_numbers(n1,n2):
-    return sum([x for x in range(1, n1) if not (n1 % x)]) == n2 and n1 == sum([x for x in range(1, n2) if not (n2 % x)])
+    def sum_divisor(n):
+        return sum([x for x in range(1, n) if not (n % x)])
+        
+    return sum_divisor(n1) == n2 and n1 == sum_divisor(n2)
 ```
 
 ##### Good case
