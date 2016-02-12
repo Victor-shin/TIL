@@ -19,15 +19,10 @@ from datetime import datetime
 
 def what_is_the_time(time_in_mirror):
     t = datetime.strptime("12:00", "%H:%M") - datetime.strptime(time_in_mirror, "%H:%M")
-    h = t.seconds/3600
-    m = (t.seconds/60)%60
-    
-    if h == 0:
-        h = 12
-    if h > 12:
-        h -= 12
-        
-    return "{:02}:{:02}".format(h, m)
+    h = (t.seconds / 3600) % 12
+    m = (t.seconds / 60) % 60
+
+    return "{:02}:{:02}".format(12 if h == 0 else h, m)
 ```
 
 ##### Good case
