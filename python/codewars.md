@@ -1,3 +1,59 @@
+## Clock in Mirror
+##### Details
+```
+Peter can see a clock in the mirror from the place he sits in the office. When he saw the clock shows 12:22
+He knows that the time is 11:38
+
+in the same manner:
+05:25 --> 06:35
+01:50 --> 10:10
+11:58 --> 12:02
+12:01 --> 11:59
+
+Please complete the method which is provided with mirror time as string, and return the real time as string.
+```
+
+##### My solution
+```python
+from datetime import datetime
+
+def what_is_the_time(time_in_mirror):
+    t = datetime.strptime("12:00", "%H:%M") - datetime.strptime(time_in_mirror, "%H:%M")
+    h = t.seconds/3600
+    m = (t.seconds/60)%60
+    
+    if h == 0:
+        h = 12
+    if h > 12:
+        h -= 12
+        
+    return "{:02}:{:02}".format(h, m)
+```
+
+##### Good case
+```python
+def what_is_the_time(time_in_mirror):
+    h, m = map(int, time_in_mirror.split(':'))
+    return '{:02}:{:02}'.format(-(h + (m != 0)) % 12 or 12, -m % 60)
+```
+
+```python
+def what_is_the_time(time_in_mirror):
+
+  CW_HRS = [0,  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+  MIRROR = [0, 10, 9, 8, 7, 6, 5, 4, 3, 2,  1, 12, 11]
+
+  if time_in_mirror in ["12:00", "12:30", "06:00", "06:30"]:
+    return time_in_mirror
+        
+  hours, minutes = time_in_mirror.split(':')
+  hours, minutes = int(hours), int(minutes)
+  hrs = abs(12 - hours) if minutes == 0 else MIRROR[hours]
+  mins = 0 if minutes == 0 else 60 - minutes 
+    
+  return "{:02}:{:02}".format(hrs, mins)
+```
+
 ## The Most Amicable of Numbers
 ##### Details
 ```
