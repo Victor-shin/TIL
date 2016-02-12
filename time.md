@@ -12,4 +12,3 @@ A Standard, Not a Time Zone
 ```
 
 http://www.timeanddate.com/time/aboututc.html
-
