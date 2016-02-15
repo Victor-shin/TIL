@@ -1,3 +1,60 @@
+## [6kyu] Number Shortening Filter
+##### Details
+```
+Ok, here is a new one that they asked me to do with an interview/production setting in mind.
+
+You might know and possibly even Angular.js; among other things, it lets you create your own filters that work as functions you put in your pages to do something specific to her kind of data, like shortening it to display it with a more concise notation.
+
+In this case, I will ask you to create a function which return another function (or process, in Ruby) that shortens numbers which are too long, given an initial arrays of values to replace the Xth power of a given base; if the input of the returned function is not a numerical string, it should return the input itself as a string.
+
+An example which could be worth more than a thousand words:
+
+filter1 = shorten_number(['','k','m'],1000)
+filter1('234324') == '234k'
+filter1('98234324') == '98m'
+filter1([1,2,3]) == '[1,2,3]'
+filter2 = shorten_number(['B','KB','MB','GB'],1024)
+filter2('32') == '32B'
+filter2('2100') == '2KB';
+filter2('pippi') == 'pippi'
+If you like to test yourself with actual work/interview related kata, please also consider this one about building a breadcrumb generator
+```
+
+##### My solution
+```python
+def shorten_number(suffixes, base):
+    l = len(suffixes)
+    
+    def operator(p):
+        if not str(p).isdigit() : 
+            return str(p)
+            
+        i, n = 0, int(p)   
+        while n > base and (i + 1) < l:
+            i, n = (i + 1), (n / base)
+
+        return "{}{}".format(n, suffixes[i])
+
+    return operator
+```
+
+##### Good case
+```python
+from math import log
+
+def shorten_number(ar, base):
+    def modifier(s):
+        try:
+            n = int(s)
+            i = min(int(log(n, base)), len(ar)-1)
+            
+            return str(n / base ** i) + ar[i]
+        except (TypeError, ValueError):
+            return str(s)
+    return modifier
+```
+
+
 ## Clock in Mirror
 ##### Details
 ```
