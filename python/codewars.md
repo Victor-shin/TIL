@@ -1,4 +1,4 @@
-## [7kyu] 
+## [7kyu] Remove the minimum
 ##### Details
 ```
 The museum of incredible dull things
