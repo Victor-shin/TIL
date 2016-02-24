@@ -65,11 +65,9 @@ SELECT clicks.*
 
   - Better case
 ```
-SELECT clicks.* 
-  FROM clicks 
-       INNER JOIN (SELECT sessionID, MAX(timestamp) AS max_ts 
-                     FROM clicks
-                    GROUP BY sessionID) latest
-       ON clicks.sessionID = latest.sessionID 
-          AND clicks.timestamp = latest.max_ts;
+SELECT * 
+  FROM (SELECT *, RANK() over (partition by sessionID,
+                                   order by timestamp desc) as rank
+          FROM clicks) ranked_clicks
+ WHERE ranked_clicks.rank = 1;
 ```
