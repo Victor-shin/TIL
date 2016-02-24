@@ -68,6 +68,7 @@ SELECT clicks.*
 SELECT * 
   FROM (SELECT *, RANK() over (partition by sessionID,
                                    order by timestamp desc) as rank
-          FROM clicks) ranked_clicks
+          FROM clicks
+       ) ranked_clicks
  WHERE ranked_clicks.rank = 1;
 ```
