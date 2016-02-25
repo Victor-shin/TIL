@@ -31,4 +31,4 @@ string
 - 위에 언급된 표현식중에 string functions중에 CONCAT을 쓰고 쿼리 실행계획을 살펴보니, vectorized mode가 없어지는게 보여진다.
 - record사이즈에 따라 다르겠지만 약 2천만건의 records를 count(*)하는 연산이 vectorized mode의 경우 18~19s소요되었고
 일반 모드(concat썼을 때) 20여초가 소요되었다.
-
+- cube 함수를 써도 vectorized mode가 안된다. analytic functions도 안되나보다.
