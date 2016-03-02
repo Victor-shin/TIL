@@ -1,3 +1,38 @@
+## [7kyu] Binary scORe
+##### Details
+```
+Given a number n we will define it's scORe to be 0 | 1 | 2 | 3 | ... | n, where | is the bitwise OR operator.
+
+Write a function that takes n and finds it's scORe.
+
+Examples
+
+n	scORe n
+0	0
+1	1
+49	63
+1000000	1048575
+```
+
+##### My solution
+```python
+def score(n):
+    if n < 2 :
+        return n
+        
+    b, r = 0, 0
+    while (1 << b) < n :
+        r += pow(2, b)
+        b += 1
+    
+    return r
+```
+
+##### Good case
+```python
+score=lambda n:2**n.bit_length()-1
+```
+
 ## [Beta] Quicksum
 ##### Details
 ```
