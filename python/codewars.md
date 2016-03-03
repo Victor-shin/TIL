@@ -11,7 +11,7 @@ For example: var array = ["white", "goodness"] => {white: 'goodness'}
 ##### My solution
 ```
 def colour_association(arr):
-    return [{x : y} for x, y in arr]
+    return [{k : v} for k, v in arr]
 ```
 
 ##### Good case
