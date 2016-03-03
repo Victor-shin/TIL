@@ -1,3 +1,25 @@
+## [7kyu] Colour Association
+##### Details
+```
+Colour plays an important role in our lifes. Most of us like this colour better then another. User experience specialists believe that certain colours have certain meanings for us psycologically.
+
+You are given a two dimentional array, composed of a colour and its 'common' association in each array element. The function you will write needs to return the colour as 'key' and association as its 'value'.
+
+For example: var array = ["white", "goodness"] => {white: 'goodness'}
+```
+
+##### My solution
+```
+def colour_association(arr):
+    return [{x : y} for x, y in arr]
+```
+
+##### Good case
+```
+def colour_association(arr):
+    return [{k: v} for k, v in arr]
+```
+
 ## [7kyu] Binary scORe
 ##### Details
 ```
