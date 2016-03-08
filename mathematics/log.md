@@ -1,4 +1,5 @@
-## 로그(Log)는 중요한 수학 함수의 일종이고 Logarithm의 약자이다.
+## 로그(Log)는 아주 큰 수를 용이하게 계산하기 위해 고안된 개념이다.
+중요한 수학 함수의 일종이고 Logarithm의 약자이다.
 
 출처 : http://mwultong.blogspot.com/2008/03/log.html
 
