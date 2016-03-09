@@ -51,7 +51,7 @@ def insert_dash(num):
 
 #### divmod : return a pair of numbers consisting of their quotient and remainder
 
-#### get all subset
+#### Get all subset
 ```python
 from itertools import combinations, chain
 allsubsets = lambda n: list(chain(*[combinations(range(n), ni) for ni in range(n+1)]))
