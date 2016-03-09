@@ -49,3 +49,10 @@ def insert_dash(num):
 ```
 "13579"를 넣으면 "1-3-5-7-9"로 나온다.
 
+#### divmod : return a pair of numbers consisting of their quotient and remainder
+
+#### get all subset
+```python
+from itertools import combinations, chain
+allsubsets = lambda n: list(chain(*[combinations(range(n), ni) for ni in range(n+1)]))
+```
