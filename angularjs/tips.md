@@ -1,6 +1,6 @@
 ## LOGIN 화면을 위한 화면 구성을 별도로 하고 싶다.
 ##### STEP1: index.html에서 head와 body를 분리한다.
-```
+```html
 		<div ui-view="head"></div>
 		<div class="container">
 			<div class="row">
@@ -11,7 +11,7 @@
 		</div>
 ```
 ##### STEP2: client설정 스크립트에서 state별로 views 옵션으로 각각 설정한다.
-```
+```html
             .state('history', {
                 url: '/history',
                 data: {
