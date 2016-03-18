@@ -1,3 +1,70 @@
+## [5kyu] 
+##### Details
+```
+A prime number is an integer greater than 1 that is only evenly divisible by itself and 1.
+
+Write your own Primes class with class method Primes.first(n) that returns an array of the first n prime numbers.
+
+For example:
+
+Primes.first(1)
+# => [2]
+
+Primes.first(2)
+# => [2, 3]
+
+Primes.first(5)
+# => [2, 3, 5, 7, 11]
+
+Primes.first(20).last(5)
+# => [53, 59, 61, 67, 71]
+Note: An inefficient algorithm will time out. Memoization may help.
+```
+##### My solution
+```
+s = set()
+
+class Primes:
+    @staticmethod
+    def first(n):
+        def isprime(n):
+            '''check if integer n is a prime'''
+            # make sure n is a positive integer
+            n = abs(int(n))
+            # 0 and 1 are not primes
+            if n < 2:
+                return False
+            # 2 is the only even prime number
+            if n == 2: 
+                return True    
+            # all other even numbers are not primes
+            if not n & 1: 
+                return False
+            # range starts with 3 and only needs to go up the squareroot of n
+            # for all odd numbers
+            for x in range(3, int(n**0.5)+1, 2):
+                if n % x == 0:
+                    return False
+            return True    
+        
+        if n <= len(list(s)):
+            l = list(s)
+            l.sort()
+            return l[0:n]
+        
+        l = []
+        num = 2
+        while len(l) < n:
+            if num in s or isprime(num):
+                l.append(num)
+                s.add(num)
+            num += 1
+
+        return l
+
+```
+
+
 ## [7kyu] Find an employees role in the company
 ##### Details
 ```
