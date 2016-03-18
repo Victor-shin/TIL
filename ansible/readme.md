@@ -1,4 +1,4 @@
-== Trouble shooting
+## Trouble shooting
 ##### msg: SSL Certificate does not belong to
 ```
 trknight78@sinhyeon-yong-ui-MacBook-Pro:~/Documents/workspace/sua_ansible/sua/ansible(ansible⚡) » ansible-playbook -i devhosts deploy.yml -t python                                                                                                                                                                                                                                                                      2 ↵
