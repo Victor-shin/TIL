@@ -22,7 +22,7 @@ Note: An inefficient algorithm will time out. Memoization may help.
 ```
 ##### My solution
 ```
-s = set()
+_prime_cache = [2]
 
 class Primes:
     @staticmethod
@@ -46,22 +46,17 @@ class Primes:
                 if n % x == 0:
                     return False
             return True    
-        
-        if n <= len(list(s)):
-            l = list(s)
-            l.sort()
-            return l[0:n]
-        
-        l = []
-        num = 2
-        while len(l) < n:
-            if num in s or isprime(num):
-                l.append(num)
-                s.add(num)
+
+        if n <= len(_prime_cache):
+            return _prime_cache[0:n]
+
+        num = _prime_cache[len(_prime_cache) - 1] + 1
+        while len(_prime_cache) < n:
+            if isprime(num):
+                _prime_cache.append(num)
             num += 1
 
-        return l
-
+        return _prime_cache
 ```
 
 
