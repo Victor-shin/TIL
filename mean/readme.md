@@ -19,4 +19,5 @@ var jenkins = jenkinsapi.init(JENKINS_SERVER_URL);
 - 라이브 구동시
 ```
 export NODE_ENV=production
+npm start
 ```
