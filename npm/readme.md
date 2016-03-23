@@ -2,14 +2,14 @@
 
 ## trouble shooting
 ##### /usr/bin/env: node: No such file or directory
-- 현상
+- problem
 ```
 # service sua start
 /usr/bin/env: node: No such file or directory
 Starting sua
 /usr/bin/env: node: No such file or directory
 ```
-- 해결
+- solution
 ```
 # which node
 /daum/program/node/bin/node
