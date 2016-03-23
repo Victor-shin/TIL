@@ -1,7 +1,7 @@
-## forever-service
+# forever-service
 
-##### trouble shooting
-- /usr/bin/env: node: No such file or directory
+## trouble shooting
+##### /usr/bin/env: node: No such file or directory
 ```
 # service sua start
 /usr/bin/env: node: No such file or directory
