@@ -33,7 +33,7 @@ pm2 start bin/www
 ##### forever-service
 
 ####### trouble shooting
-####### /usr/bin/env: node: No such file or directory
+######### /usr/bin/env: node: No such file or directory
 - problem
 ```
 # service sua start
