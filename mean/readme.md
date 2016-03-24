@@ -21,3 +21,22 @@ var jenkins = jenkinsapi.init(JENKINS_SERVER_URL);
 export NODE_ENV=production
 npm start
 ```
+
+## 프로세스 관리
+##### forever-service
+
+####### trouble shooting
+####### /usr/bin/env: node: No such file or directory
+- problem
+```
+# service sua start
+/usr/bin/env: node: No such file or directory
+Starting sua
+/usr/bin/env: node: No such file or directory
+```
+- solution
+```
+# which node
+/daum/program/node/bin/node
+# ln -s /daum/program/node/bin/node /usr/bin/node
+```
