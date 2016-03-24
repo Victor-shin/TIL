@@ -27,7 +27,6 @@ npm start
 #### start server with "mean stack"
 ```
 pm2 start bin/www
-
 ```
 
 ### forever-service
