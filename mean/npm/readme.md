@@ -15,3 +15,9 @@ Starting sua
 /daum/program/node/bin/node
 # ln -s /daum/program/node/bin/node /usr/bin/node
 ```
+
+## pm2
+### Run server with "mean stack"
+```
+# pm2 start bin/www
+```
