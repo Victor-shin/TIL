@@ -23,6 +23,13 @@ npm start
 ```
 
 ## 프로세스 관리
+##### pm2
+####### start server with "mean stack"
+```
+pm2 start bin/www
+
+```
+
 ##### forever-service
 
 ####### trouble shooting
