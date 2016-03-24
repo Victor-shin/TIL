@@ -23,17 +23,17 @@ npm start
 ```
 
 ## 프로세스 관리
-##### pm2
-####### start server with "mean stack"
+### pm2
+#### start server with "mean stack"
 ```
 pm2 start bin/www
 
 ```
 
-##### forever-service
+### forever-service
 
-####### trouble shooting
-######### /usr/bin/env: node: No such file or directory
+#### trouble shooting
+##### /usr/bin/env: node: No such file or directory
 - problem
 ```
 # service sua start
