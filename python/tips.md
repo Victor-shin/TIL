@@ -1,4 +1,23 @@
 ## TIP
+##### Simple logger
+- Link
+https://docs.python.org/2/howto/logging.html
+
+- Use
+```
+Python 2.7.10 (default, Oct 23 2015, 18:05:06)
+[GCC 4.2.1 Compatible Apple LLVM 7.0.0 (clang-700.0.59.5)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import logging
+>>> logging.basicConfig(filename="/tmp/testpython.log", format="%(asctime)s [%(levelname)s] %(message)s", datefmt='%m/%d/%Y %H:%M:%S', level=logging.DEBUG)
+>>> logging.error("test")
+```
+- Output
+```
+trknight78@sinhyeon-yong-ui-MacBook-Pro:/tmp » tail -f testpython.log
+03/28/2016 13:31:36 [ERROR] test
+```
+
 ##### python 스러운 문법이 뭐가 있을까? 계속 정리해보자
 - expression if expression else expression
 - 다음 URL 참고. (좋다)
