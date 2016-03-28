@@ -3,14 +3,11 @@
 - Link
 https://docs.python.org/2/howto/logging.html
 
-- Use
+- How to
 ```
-Python 2.7.10 (default, Oct 23 2015, 18:05:06)
-[GCC 4.2.1 Compatible Apple LLVM 7.0.0 (clang-700.0.59.5)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
->>> import logging
->>> logging.basicConfig(filename="/tmp/testpython.log", format="%(asctime)s [%(levelname)s] %(message)s", datefmt='%m/%d/%Y %H:%M:%S', level=logging.DEBUG)
->>> logging.error("test")
+import logging
+logging.basicConfig(filename="/tmp/testpython.log", format="%(asctime)s [%(levelname)s] %(message)s", datefmt='%m/%d/%Y %H:%M:%S', level=logging.DEBUG)
+logging.error("test")
 ```
 - Output
 ```
