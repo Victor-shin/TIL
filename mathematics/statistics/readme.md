@@ -28,7 +28,7 @@ http://www.autonlab.org/tutorials/
 - 빠르게 얻는 분산 = (Σx^2) / n - u^2
 
 ### 표준편차
-표준편차 = √분산
+- 표준편차 = √분산
 
 ### 
 
