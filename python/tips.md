@@ -8,6 +8,10 @@ There's a huge difference.
 - In order to find an element in a set, a hash lookup is used (which is why sets are unordered). This makes __contains__ (in operator) a lot more efficient for sets than lists.
 - Sets can only contain hashable items (see #3). If you try: set(([1],[2])) you'll get a TypeError.
 
+간단한 python 테스트 코드 수행 결과 다음과 같이 나왔다.
+- list = 300ms 
+- set = 20ms
+
 ##### Simple logger
 - Link
 https://docs.python.org/2/howto/logging.html
