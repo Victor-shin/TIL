@@ -26,4 +26,4 @@ EXPORT TABLE [테이블명] to '[HDFS 디렉토리 경로]';
 ```
 LOAD DATA INPATH '[로컬 화일]' INTO TABLE [테이블명];
 ```
-- http://www.cloudera.com/documentation/enterprise/5-2-x/topics/impala_load_data.html
+- https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DML
