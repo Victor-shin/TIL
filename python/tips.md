@@ -1,14 +1,12 @@
 ## TIP
 ##### Difference between set and list
 - http://stackoverflow.com/questions/12354515/what-is-the-difference-between-sets-and-lists-in-python
-```
-There's a huge difference.
 
-Sets can't contain duplicates
-Sets are unordered
-In order to find an element in a set, a hash lookup is used (which is why sets are unordered). This makes __contains__ (in operator) a lot more efficient for sets than lists.
-Sets can only contain hashable items (see #3). If you try: set(([1],[2])) you'll get a TypeError.
-```
+There's a huge difference.
+- Sets can't contain duplicates
+- Sets are unordered
+- In order to find an element in a set, a hash lookup is used (which is why sets are unordered). This makes __contains__ (in operator) a lot more efficient for sets than lists.
+- Sets can only contain hashable items (see #3). If you try: set(([1],[2])) you'll get a TypeError.
 
 ##### Simple logger
 - Link
