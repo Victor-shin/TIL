@@ -18,12 +18,12 @@ FATAL: all hosts have already failed -- aborting
 ```
 
 - Solution
-"validate_certs=no" 구문을 추가한다.
+__"validate_certs=no"__ 구문을 추가한다.
 ```
 - name: python download
   get_url: url=https://www.python.org/ftp/python/{{ python_version }}/Python-{{ python_version }}.tgz
            dest={{ base_tmp }}/Python-{{ python_version }}.tgz
-           __validate_certs=no__
+           validate_certs=no
   environment:
     http_proxy: "{{ http_proxy_url }}"
     https_proxy: "{{ http_proxy_url }}"
