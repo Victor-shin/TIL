@@ -22,3 +22,14 @@ FATAL: all hosts have already failed -- aborting
 ```
 validate_certs=no
 ```
+
+```
+- name: python download
+  get_url: url=https://www.python.org/ftp/python/{{ python_version }}/Python-{{ python_version }}.tgz
+           dest={{ base_tmp }}/Python-{{ python_version }}.tgz
+           validate_certs=no
+  environment:
+    http_proxy: "{{ http_proxy_url }}"
+    https_proxy: "{{ http_proxy_url }}"
+  tags: [ python ]
+```
