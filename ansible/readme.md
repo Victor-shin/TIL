@@ -16,3 +16,9 @@ msg: SSL Certificate does not belong to www.python.org.  Make sure the url has a
 
 FATAL: all hosts have already failed -- aborting
 ```
+
+- Solution
+다음을 추가한다.
+```
+validate_certs=no
+```
