@@ -10,10 +10,10 @@
 - request
 
 ### progress bar
-ngprogress
+- ngprogress
 
 ### select box
-angular-ui-select
+- angular-ui-select
 
 ### paging
-pagination
+- pagination
