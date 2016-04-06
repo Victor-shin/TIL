@@ -42,7 +42,7 @@ set hive.vectorized.execution.enabled = true;
 set hive.vectorized.execution.reduce.enabled = true;
 ```
 
-### #4 cost based query optimization
+### #4 Cost based query optimization
 ```
 set hive.cbo.enable=true;
 set hive.compute.query.using.stats=true;
