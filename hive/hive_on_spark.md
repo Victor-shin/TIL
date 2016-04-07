@@ -10,7 +10,7 @@ http://www.cloudera.com/documentation/enterprise/latest/topics/admin_hos_config.
 (cloudera) hive on spark 
 http://www.cloudera.com/documentation/enterprise/latest/topics/admin_hos_config.html#concept_mb4_g2w_3r__section_hd1_nyv_yr
 
-#### 테스트
+#### HUE에서 테스트
 ```
 set hive.execution.engine=spark;
 
@@ -28,3 +28,6 @@ select *
   - mr engine = 41~46 초
   - spark engine = 19 초
   
+
+#### beeline에서 테스트
+- 동일한 쿼리 수행 결과 잘 돌아간다.
