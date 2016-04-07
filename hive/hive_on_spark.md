@@ -19,6 +19,6 @@ select *
 
 - Job Browser와 연동은 잘 안되는 걸로 확인된다.
 - 샘플 SQL의 수행속도는 mr engine로 수행시보다 2배 빠른걸로 확인된다.
-  mr engine = 41~46 초
-  spark engine = 19 초
+  - mr engine = 41~46 초
+  - spark engine = 19 초
   
