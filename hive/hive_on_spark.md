@@ -32,4 +32,4 @@ select *
 #### Beeline에서 테스트
 - 동일한 쿼리 수행 결과 잘 돌아간다.
 - 쿼리 수행 시간은 17초. 총 수행시간은 39.61초
-- hive execution engine을 mr로 했을 시 동일쿼리가 47초 소요되었다.
+- (그외) hive execution engine을 mr로 했을 시 동일쿼리가 47초 소요되었다.
