@@ -2,11 +2,7 @@
 ### 결론
 #### 현재 5.5.x 버전인데, 서비스 버전으로는 쓰지 않도록 권장하고 있다.
 ### 상세 테스트
-#### 관련문서
-http://www.cloudera.com/documentation/enterprise/5-5-x/topics/admin_hos_oview.html
-
-http://www.cloudera.com/documentation/enterprise/latest/topics/admin_hos_config.html
-
+#### 환경설정
 (cloudera) hive on spark 
 http://www.cloudera.com/documentation/enterprise/latest/topics/admin_hos_config.html#concept_mb4_g2w_3r__section_hd1_nyv_yr
 
