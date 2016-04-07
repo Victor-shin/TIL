@@ -17,7 +17,8 @@ select *
    ;
 ```
 
-- Job Browser와 연동은 잘 안되는 걸로 확인된다.
+- Job Browser와 연동은 잘 안된다. 
+  - Job Browser에서는 수행중인 작업으로 보이나(never ending), 실제로 Hue를 refresh해보면 결과가 나온다.
 - 샘플 SQL의 수행속도는 mr engine로 수행시보다 2배 빠른걸로 확인된다.
   - mr engine = 41~46 초
   - spark engine = 19 초
