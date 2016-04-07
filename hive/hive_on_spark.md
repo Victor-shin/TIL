@@ -34,7 +34,7 @@ select *
 beeline -u jdbc:hive2://test:10000/default
 set hive.execution.engine=spark;
 
-select *
+select count(*)
   from test
  where 1 = 1
    and dt = '20160405' 
