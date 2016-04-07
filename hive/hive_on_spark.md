@@ -30,6 +30,18 @@ select *
   
 
 #### Beeline에서 테스트
+```
+beeline -u jdbc:hive2://test:10000/default
+set hive.execution.engine=spark;
+
+select *
+  from test
+ where 1 = 1
+   and dt = '20160405' 
+   and hh = '15'
+   ;
+```
+
 - 동일한 쿼리 수행 결과 잘 돌아간다.
 - 쿼리 수행 시간은 17초. 총 수행시간은 39.61초
 - (그외) hive execution engine을 mr로 했을 시 동일쿼리가 47초 소요되었다.
