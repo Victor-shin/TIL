@@ -37,7 +37,21 @@ select count(*)
    and hh = '15'
    ;
 ```
-
 - 동일한 쿼리 수행 결과 잘 돌아간다.
 - 쿼리 수행 시간은 17초. 총 수행시간은 39초가 소요되었다.
-- (그외) hive execution engine을 mr로 했을 시, 쿼리 수행 시간은 31초, 총 수행시간은 47초가 소요되었다.
+
+###  비교
+#### VS hive execution engine=mr
+쿼리 수행 시간은 31초, 총 수행시간은 47초가 소요되었다.
+
+#### VS spark scala
+```
+scala> val logFiles = "/test/201604/05/15/*.gz"
+logFiles: String = /test/201604/05/15/*.gz
+scala> val cnt = sc.textFile(logFiles).count()
+16/04/07 17:39:27 INFO MemoryStore: ensureFreeSpace(196696) called with curMem=449370, maxMem=556038881
+
+16/04/07 17:39:40 INFO DAGScheduler: Job 2 finished: count at <console>:23, took 13.349757 s
+cnt: Long = 2243815
+```
+총 수행시간 13초
