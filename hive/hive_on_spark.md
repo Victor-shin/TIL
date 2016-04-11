@@ -1,5 +1,8 @@
 ## (Cloudera) Hive on Spark
 ### 결론
+#### 5.7 버전에서는 쓸만한 것 같다. 조사중
+http://www.cloudera.com/documentation/enterprise/latest/topics/admin_hos_oview.html
+
 #### 현재 5.5.x 버전인데, 서비스 버전으로는 쓰지 않도록 권장하고 있다.
 ### 상세 테스트
 #### 환경설정
