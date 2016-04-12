@@ -44,7 +44,7 @@ select count(*)
 - 쿼리 수행 시간은 17초. 총 수행시간은 39초가 소요되었다.
 
 ###  비교
-#### VS hive execution engine=mr
+#### VS mr engine
 쿼리 수행 시간은 31초, 총 수행시간은 47초가 소요되었다.
 
 #### VS spark scala
