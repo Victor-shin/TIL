@@ -46,6 +46,13 @@ select count(*)
 #### VS mr engine
 ```
 set hive.execution.engine=mr;
+
+select count(*)
+  from test
+ where 1 = 1
+   and dt = '20160405' 
+   and hh = '15'
+   ;
 ```
 쿼리 수행 시간은 31초, 총 수행시간은 47초가 소요되었다.
 
