@@ -11,3 +11,6 @@
 
 ##### Growth hacking
 - http://sudo.pristones.com/2014/05/22/growth-hacking-workshop/
+
+##### 이탈율 vs 종료율
+- https://support.google.com/analytics/answer/2525491?hl=ko
