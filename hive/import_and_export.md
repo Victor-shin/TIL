@@ -24,6 +24,7 @@ EXPORT TABLE [테이블명] to '[HDFS 디렉토리 경로]';
 
 ## CSV 파일 IMPORT
 ```
-LOAD DATA INPATH '[로컬 화일]' INTO TABLE [테이블명];
+LOAD DATA INPATH '[HDFS 파일 경로]' INTO TABLE [테이블명];
+LOAD DATA LOCAL INPATH '[로컬 파일 경로]' INTO TABLE [테이블명];
 ```
 - https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DML
