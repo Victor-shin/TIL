@@ -30,7 +30,7 @@ ssh -vT git@github.xxxxxxxx.com
 - ssh key 생성 
 https://git-scm.com/book/ko/v1/Git-%EC%84%9C%EB%B2%84-SSH-%EA%B3%B5%EA%B0%9C%ED%82%A4-%EB%A7%8C%EB%93%A4%EA%B8%B0
 
-#### 상세설명
+##### 상세설명
 위의 케이스는 local 및 배포가 진행되어야 하는 remote server에서 github과 연결 테스트를 했을 때에도 이상이 없었다.
 ```
 [deploy@sua-d-tool sua-web]$ ssh -T git@github.xxxxxxxx.com
