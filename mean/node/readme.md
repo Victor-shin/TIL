@@ -1,4 +1,65 @@
 # learnyounode
+## HTTP JSON API 서버
+### My solution
+```js
+var http = require('http');
+var url = require('url');
+
+var server = http.createServer(function (request, response) {
+    var obj = url.parse(request.url, true)
+
+    var dt = new Date(obj.query.iso);
+    console.log("iso = " + obj.query.iso);
+
+    response.writeHead(200, { 'Content-Type': 'application/json' })
+    if(obj.pathname == "/api/parsetime") {
+        response.end(JSON.stringify({hour: dt.getHours(), minute: dt.getMinutes(), second: dt.getSeconds()}, null, 4));
+    } else if(obj.pathname == "/api/unixtime") {
+        response.end(JSON.stringify({unixtime: dt.getTime()}, null, 4));
+    }
+});
+
+var PORT = Number(process.argv[2]);
+server.listen(PORT)
+```
+
+### Their solution
+```js
+     var http = require('http')
+     var url = require('url')
+
+     function parsetime (time) {
+       return {
+         hour: time.getHours(),
+         minute: time.getMinutes(),
+         second: time.getSeconds()
+       }
+     }
+
+     function unixtime (time) {
+       return { unixtime : time.getTime() }
+     }
+
+     var server = http.createServer(function (req, res) {
+       var parsedUrl = url.parse(req.url, true)
+       var time = new Date(parsedUrl.query.iso)
+       var result
+
+       if (/^\/api\/parsetime/.test(req.url))
+         result = parsetime(time)
+       else if (/^\/api\/unixtime/.test(req.url))
+         result = unixtime(time)
+
+       if (result) {
+         res.writeHead(200, { 'Content-Type': 'application/json' })
+         res.end(JSON.stringify(result))
+       } else {
+         res.writeHead(404)
+         res.end()
+       }
+     })
+     server.listen(Number(process.argv[2]))
+```
 ## HTTP 대문자로 만드는 서버
 ### My solution
 ```js
