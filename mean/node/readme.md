@@ -1,7 +1,38 @@
 # learnyounode
+## HTTP 클라이언트 (연습 문제 13개 중 7개 째)
+### My solution
+- program.js
+```
+var http = require('http')
 
-### 모듈 단위로 만들기
-##### My solution
+http.get(process.argv[2], callback);
+
+function callback(response) {
+        response.setEncoding("utf8");
+        response.on("data", function (data) {
+            //console.log(data.setEncoding("utf8"));
+            console.log(data);
+        });
+}
+```
+
+### Their solution
+```
+var http = require('http')
+
+http.get(process.argv[2], callback);
+
+function callback(response) {
+        response.setEncoding("utf8");
+        response.on("data", function (data) {
+            //console.log(data.setEncoding("utf8"));
+            console.log(data);
+        });
+}
+```
+
+## 모듈 단위로 만들기
+### My solution
 - program.js
 ```
 var mymodule = require('./mymodule.js');
@@ -38,7 +69,7 @@ module.exports = function (path, ext, callback) {
 }
 ```
 
-##### Their solution
+### Their solution
 - program.js
 ```
      var filterFn = require('./solution_filter.js')
