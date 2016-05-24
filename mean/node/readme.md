@@ -1,4 +1,33 @@
 # learnyounode
+## 파일 서버
+### My solution
+```js
+var http = require('http');
+var fs = require('fs');
+
+var server = http.createServer(function (request, response) {
+    src = fs.createReadStream(process.argv[3]);
+    src.pipe(response);
+});
+
+var PORT = Number(process.argv[2]);
+server.listen(PORT)
+```
+
+### Their solution
+```js
+     var http = require('http')
+     var fs = require('fs')
+
+     var server = http.createServer(function (req, res) {
+       res.writeHead(200, { 'content-type': 'text/plain' })
+
+       fs.createReadStream(process.argv[3]).pipe(res)
+     })
+
+     server.listen(Number(process.argv[2]))
+```
+
 ## 시간 서버
 ### My solution
 ```js
