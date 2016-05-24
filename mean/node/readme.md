@@ -2,7 +2,7 @@
 ## HTTP 클라이언트
 ### My solution
 - program.js
-```
+```js
 var http = require('http')
 
 http.get(process.argv[2], callback);
@@ -15,7 +15,7 @@ function callback(response) {
 
 ### Their solution
 - program.js
-```
+```js
      var http = require('http')
 
      http.get(process.argv[2], function (response) {
@@ -28,7 +28,7 @@ function callback(response) {
 ## 모듈 단위로 만들기
 ### My solution
 - program.js
-```
+```js
 var mymodule = require('./mymodule.js');
 
 function callback(err, data) {
@@ -44,7 +44,7 @@ var ret = mymodule(process.argv[2], process.argv[3], callback);
 ```
 
 - mymodule.js
-```
+```js
 var fs = require('fs');
 
 module.exports = function (path, ext, callback) {
@@ -65,7 +65,7 @@ module.exports = function (path, ext, callback) {
 
 ### Their solution
 - program.js
-```
+```js
      var filterFn = require('./solution_filter.js')
      var dir = process.argv[2]
      var filterStr = process.argv[3]
@@ -81,7 +81,7 @@ module.exports = function (path, ext, callback) {
 ```
 
 - solution_filter.js
-```
+```js
      var fs = require('fs')
      var path = require('path')
 
