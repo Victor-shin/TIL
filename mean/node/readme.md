@@ -1,4 +1,66 @@
 # learnyounode
+## ASYNC 다루기
+### My solution
+```js
+var http = require('http')
+var bl = require('bl')
+
+var count = 0;
+var result = ['', '', ''];
+function getUrlData(url, index) {
+    http.get(url, callback);
+    function callback(response) {
+            response.setEncoding("utf8");
+
+            response.pipe(bl(function (err, data) {
+                if (err)
+                    return console.error(err);
+
+                var str = data.toString();
+                result[index] = str;
+                count += 1;
+
+                if(count == 3) {
+                    for(var i = 0; i < 3; i++) {
+                        console.log(result[i]);
+                    }
+                }
+            }));
+    };
+}
+```
+
+### Their solution
+```js
+     var http = require('http')
+     var bl = require('bl')
+     var results = []
+     var count = 0
+
+     function printResults () {
+       for (var i = 0; i < 3; i++)
+         console.log(results[i])
+     }
+
+     function httpGet (index) {
+       http.get(process.argv[2 + index], function (response) {
+         response.pipe(bl(function (err, data) {
+           if (err)
+             return console.error(err)
+
+           results[index] = data.toString()
+           count++
+
+           if (count == 3)
+             printResults()
+         }))
+       })
+     }
+
+     for (var i = 0; i < 3; i++)
+       httpGet(i)
+```
+
 ## HTTP 모으기
 ### My solution
 - program.js
