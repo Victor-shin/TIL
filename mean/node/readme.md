@@ -10,7 +10,6 @@ http.get(process.argv[2], callback);
 function callback(response) {
         response.setEncoding("utf8");
         response.on("data", function (data) {
-            //console.log(data.setEncoding("utf8"));
             console.log(data);
         });
 }
@@ -19,17 +18,13 @@ function callback(response) {
 ### Their solution
 - program.js
 ```
-var http = require('http')
+     var http = require('http')
 
-http.get(process.argv[2], callback);
-
-function callback(response) {
-        response.setEncoding("utf8");
-        response.on("data", function (data) {
-            //console.log(data.setEncoding("utf8"));
-            console.log(data);
-        });
-}
+     http.get(process.argv[2], function (response) {
+       response.setEncoding('utf8')
+       response.on('data', console.log)
+       response.on('error', console.error)
+     }).on('error', console.error)
 ```
 
 ## 모듈 단위로 만들기
