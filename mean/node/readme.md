@@ -1,5 +1,5 @@
 # learnyounode
-## HTTP 클라이언트 (연습 문제 13개 중 7개 째)
+## HTTP 클라이언트
 ### My solution
 - program.js
 ```
