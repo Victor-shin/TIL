@@ -13,7 +13,7 @@ function callback(response) {
 
         response.pipe(bl(function (err, data) {
             if (err)
-                console.error(err);
+                return console.error(err);
 
             var str = data.toString();
             console.log(str.length);
