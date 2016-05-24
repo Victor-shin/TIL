@@ -1,4 +1,44 @@
 # learnyounode
+## HTTP 모으기
+### My solution
+- program.js
+```js
+var http = require('http')
+var bl = require('bl')
+
+http.get(process.argv[2], callback);
+
+function callback(response) {
+        response.setEncoding("utf8");
+
+        response.pipe(bl(function (err, data) {
+            if (err)
+                console.error(err);
+
+            var str = data.toString();
+            console.log(str.length);
+            console.log(str);
+        }));
+};
+```
+
+### Their solution
+- program
+```js
+     var http = require('http')
+     var bl = require('bl')
+
+     http.get(process.argv[2], function (response) {
+       response.pipe(bl(function (err, data) {
+         if (err)
+           return console.error(err)
+         data = data.toString()
+         console.log(data.length)
+         console.log(data)
+       }))
+     })
+```
+
 ## HTTP 클라이언트
 ### My solution
 - program.js
