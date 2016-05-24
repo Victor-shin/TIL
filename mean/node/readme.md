@@ -9,7 +9,9 @@ var mymodule = require('./mymodule.js');
 function callback(err, data) {
     if(err) return;
     data.forEach(
-        function(item) {console.log(item)}
+        function(item) {
+            console.log(item);
+        }
     );
 }
 
