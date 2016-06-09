@@ -29,4 +29,14 @@ An element can have a positive or negative stack order:
 The ::before pseudo-element can be used to insert some content before the content of an element.
 The following example inserts an image before the content of each <h1> element:
 
-
+#### Input with icon/image
+If you want an icon inside the input, use the background-image property and position it with the background-position property. Also notice that we add a large left padding to reserve the space of the icon:
+```
+input[type=text] {
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding-left: 40px;
+}
+```
