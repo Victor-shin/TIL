@@ -31,7 +31,7 @@ The following example inserts an image before the content of each <h1> element:
 
 #### Input with icon/image
 If you want an icon inside the input, use the background-image property and position it with the background-position property. Also notice that we add a large left padding to reserve the space of the icon:
-```html
+```css
 input[type=text] {
     background-color: white;
     background-image: url('searchicon.png');
