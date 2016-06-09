@@ -24,4 +24,9 @@ The z-index property specifies the stack order of an element (which element shou
 
 An element can have a positive or negative stack order:
 
+### CSS Pseudo-element
+#### CSS - The ::before Pseudo-element
+The ::before pseudo-element can be used to insert some content before the content of an element.
+The following example inserts an image before the content of each <h1> element:
+
 
