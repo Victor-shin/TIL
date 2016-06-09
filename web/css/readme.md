@@ -9,11 +9,19 @@ An element with position: fixed; is positioned relative to the viewport, which m
 A fixed element does not leave a gap in the page where it would normally have been located.
 
 Notice the fixed element in the lower-right corner of the page. Here is the CSS that is used:
+
 #### position: absolute;
 An element with position: absolute; is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed).
 
 However; if an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling.
 
 Note: A "positioned" element is one whose position is anything except static.
+
+#### Overlapping Elements
+When elements are positioned, they can overlap other elements.
+
+The z-index property specifies the stack order of an element (which element should be placed in front of, or behind, the others).
+
+An element can have a positive or negative stack order:
 
 
