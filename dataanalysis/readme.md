@@ -14,3 +14,6 @@
 
 ##### 이탈율 vs 종료율
 - https://support.google.com/analytics/answer/2525491?hl=ko
+
+##### cohort 분석
+- http://www.slideshare.net/LeeGwan/ss-42159541
