@@ -104,3 +104,5 @@
     - 찾는 대상이 확률보다 큰 경우
       { X >= b } = {X >= b - 0.5}
     ```
+    - 관련링크
+      [http://terms.naver.com/entry.nhn?docId=3405223&cid=47324&categoryId=47324]
