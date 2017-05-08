@@ -105,4 +105,4 @@
       { X >= b } = {X >= b - 0.5}
     ```
     - 관련링크
-      [http://terms.naver.com/entry.nhn?docId=3405223&cid=47324&categoryId=47324]
+      [연속성 수정](http://terms.naver.com/entry.nhn?docId=3405223&cid=47324&categoryId=47324)
