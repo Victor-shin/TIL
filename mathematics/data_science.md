@@ -312,10 +312,10 @@ Regularization은 beta가 커지면 커질수록 해당 모델에게 패널티�
 반대로 작아질 수록 0에 가까워진다.
 
 - 미분한 로지스틱 함수
-```
-def logistic_prime(x):
-    return logistic(x) * (1 - logistic(x))
-```
+  ```
+  def logistic_prime(x):
+      return logistic(x) * (1 - logistic(x))
+  ```
 
 #### 모델 적용하기
 
@@ -369,11 +369,11 @@ ID3알고리즘으로 만들게 되면 이해가 쉽고 구현하기 쉬워서 �
 아주 인기가 많고 두루 쓰이는 알고리즘 중 하나이다.
 
 - 방법1. bootstrap aggregating(부트스트랩 통합) 또는 bagging이라고 한다.
-  데이터를 bootstrap한다. 
-  전체 데이터를 inputs로 학습하는 것이 아니라 bootstrap_sample(inputs)의 결과물을 각 나무의 입력값으로 넣어 학습하는 것이다.
+  - 데이터를 bootstrap한다. 
+  - 전체 데이터를 inputs로 학습하는 것이 아니라 bootstrap_sample(inputs)의 결과물을 각 나무의 입력값으로 넣어 학습하는 것이다.
 - 방법2. 파티션을 나누는 변수에 랜덤성을 부여한다.
-  좀 더 광범위하게 얘기하면 '앙상블 학습(ensemble learning)'이라고 한다.
-  성능이 떨어지는 (그리고 대부분 bias 가 높고 varianc가 낮은) 여러 모델을 동시에 활용해서 전체적으로는 성능이 좋은 모델을 구축한다.
+  - 좀 더 광범위하게 얘기하면 '앙상블 학습(ensemble learning)'이라고 한다.
+  - 성능이 떨어지는 (그리고 대부분 bias 가 높고 varianc가 낮은) 여러 모델을 동시에 활용해서 전체적으로는 성능이 좋은 모델을 구축한다.
 
 
 ## 신경망
@@ -388,19 +388,19 @@ ID3알고리즘으로 만들게 되면 이해가 쉽고 구현하기 쉬워서 �
 
 #### 퍼셉트론
 n개의 이진수가 하나의 뉴런을 통과해서 가중합이 0보다 크면 활성화되는 가장 간단한 신경망 구조이다.
-```
-def step_function(x):
-    return 1 if x >= 0 else 0
+  ```
+  def step_function(x):
+      return 1 if x >= 0 else 0
 
-def perceptron_output(weights, bias, x):
-    calculation = dot(weights, x) + bias
-    return step_function(calculation)
-```
+  def perceptron_output(weights, bias, x):
+      calculation = dot(weights, x) + bias
+      return step_function(calculation)
+  ```
 
 퍼셉트론은 초평면(hyperplane)으로 구분되는 두 개의 공간을 분리시키는 역할을 한다.
-```
-dot(weights, x) + bias == 0
-```
+  ```
+  dot(weights, x) + bias == 0
+  ```
 
 #### 순방향(Feed-forward) 신경망
 
@@ -425,12 +425,11 @@ dot(weights, x) + bias == 0
 
 #### 모델
 가장 간단한 군집화 방법중의 하나는 군집의 개수 k를 미리 정해 두는 k-means이다.
-```
-k-means
+  ```
+  k-means
 
-데이터와 데이터가 속한 군집의 중심점과의 거리의 제곱합을 최소화시키며 S_1, ..., S_k까지의 군집을 구한다.
-
-```
+  데이터와 데이터가 속한 군집의 중심점과의 거리의 제곱합을 최소화시키며 S_1, ..., S_k까지의 군집을 구한다.
+  ```
 
 #### 예시 : 오프라인 모임
 
@@ -465,12 +464,12 @@ k-means
 하지만 다른 복잡한 확률분포로부터 데이터를 샘플링하는 것은 간단한 작업이 아니다.
 깁스 샘플링은 이때 사용할 수 있는 기술 중 하나이다.
 
-```
-깁스 샘플링
+  ```
+  깁스 샘플링
 
-임의의 (유효한) x또는 y값에서 출발해서 x에 대한 y의 조건부 확률과 y에 대한 x의 조건부 확률 사이를 오가며 반복적으로 값을 선택하는 방법이다.
-이 과정을 여러 번 반복하여 얻은 x와 y는 결합확률분포(joint distribution)에서 얻은 샘플이라고 볼 수 있다.
-```
+  임의의 (유효한) x또는 y값에서 출발해서 x에 대한 y의 조건부 확률과 y에 대한 x의 조건부 확률 사이를 오가며 반복적으로 값을 선택하는 방법이다.
+  이 과정을 여러 번 반복하여 얻은 x와 y는 결합확률분포(joint distribution)에서 얻은 샘플이라고 볼 수 있다.
+  ```
 
 #### 토픽 모델링
 
