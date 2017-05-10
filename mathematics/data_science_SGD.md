@@ -14,7 +14,7 @@
 - 쉬운 구현
 
 #### 단점
--3 regularization parameter 그리고 반복되는 숫자와 같은 많은 hyperparameters가 요구된다.
+- regularization parameter 그리고 반복되는 숫자와 같은 많은 hyperparameters가 요구된다.
 - feature scaling에 민감하다.
 
 주석* 튜닝 또는 최적화 해야 하는 주 변수가 아닌 사람들이 선험적 지식으로 설정을 하거나 또는 외부 모델 메커니즘을 통해 자동으로 설정이 되는 변수를 말한다.
