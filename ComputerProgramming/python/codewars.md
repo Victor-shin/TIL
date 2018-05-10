@@ -1,3 +1,140 @@
+## [5kyu] Funnel Out A String
+##### Details
+```
+All letters in the funnel will be unique i.e. in every comparison one letter will be strictly smaller than the other. The funnel will be presented as a nested list, e.g:
+
+[["d","a","c"],
+   ["b","e"],
+     ["f"]]
+
+Fully Worked Example
+\d,a,c/      \d,a,c/      \d,a,c/ -->  \d   c/     
+ \b,e/        \b,e/  -->   \  e/  -->   \a,e/
+  \f/   -->    \ /   -->    \b/          \b/  --> 
+                f        f            f
+------      -------      -------      -------
+
+
+\d   c/      \d   c/ -->  \    c/      \    c/     
+ \a,e/  -->   \  e/  -->   \d,e/        \d,e/  -->
+  \ /   -->    \a/          \a/   -->    \ /   -->
+f  b        fb           fb           fb  a
+------      -------      -------      -------
+
+
+ \    c/      \    c/      \    c/ -->  \     /     
+  \  e/        \  e/  -->   \   /  -->   \  c/   
+   \d/   -->    \ /   -->    \e/          \e/  -->
+fba          fba d       fbad          fbad
+-------      -------     --------      -------
+
+
+  \     /      \     /      \     /
+   \  c/  -->   \   /        \   / 
+    \ /          \c/   -->    \ /   
+fbad e       fbade        fbadec         
+-------      -------      -------
+
+DONE. Return "fbadec".
+```
+
+
+
+##### My solution
+```
+EMPTY = '~'
+
+
+def funnel_out(funnel):
+    if len(funnel) == 1:
+        return funnel[0][0]
+    
+    """
+    (1) check is_empty_funnel
+    (2) check no empty block between funnel
+    (3) pop block
+    """    
+    str = ""
+    c = 0
+    while(not is_empty(funnel)):
+        c+=1
+        funnel = rebuild_funnel(funnel)
+        funnel, os = pop_funnel(funnel)
+        if os is not EMPTY:
+            str += os
+            
+    return str
+
+def rebuild_funnel(funnel):
+    if not is_empty_exists_under_top(funnel):
+        return funnel
+        
+    depth = len(funnel)
+    for i in range(depth - 1):
+        y = depth - i - 1
+        width = len(funnel[y])
+        for j in range(width):
+            x = width - j - 1
+            if funnel[y][x] == EMPTY and not (funnel[y - 1][x] == EMPTY and funnel[y - 1][x + 1] == EMPTY):
+                l = funnel[y - 1][x]
+                r = funnel[y - 1][x + 1]
+                if l > r:
+                    funnel[y][x] = funnel[y - 1][x + 1]
+                    funnel[y - 1][x + 1] = EMPTY
+                    rebuild_funnel(funnel)
+                else:
+                    funnel[y][x] = funnel[y - 1][x]
+                    funnel[y - 1][x] = EMPTY
+                    rebuild_funnel(funnel)
+    return funnel
+    
+def pop_funnel(funnel):
+    depth = len(funnel)
+    os = funnel[depth - 1][0]
+    if os is not EMPTY:
+        funnel[depth - 1][0] = EMPTY
+        return funnel, os
+    return funnel, EMPTY
+    
+def is_empty(funnel):
+    depth = len(funnel)
+    for i in range(depth):
+        width = len(funnel[i])
+        for j in range(width):
+            if funnel[i][j] is not EMPTY:
+                return False
+    return True                
+            
+def is_empty_exists_under_top(funnel):
+    depth = len(funnel)
+    if depth is 1:
+        return False
+        
+    for i in range(1, depth):
+        width = len(funnel[i])
+        for j in range(width):
+            if funnel[i][j] is EMPTY:
+                return True
+    return False    
+```
+
+##### Good case
+```
+def funnel_out(arr):
+    s = ''
+    while arr[-1][0] != '~':
+        s = s+arr[-1][0] # drop onto conveyor belt
+        idxDrop = 0
+        for j in range(len(arr)-1,0,-1): # Go levels up and drop items down
+            arr[j][idxDrop] = min(arr[j-1][idxDrop:idxDrop+2])
+            idxDrop = arr[j-1].index(arr[j][idxDrop])
+        
+        arr[0][idxDrop] = '~' # fill the empty space in the most upper level by a character large than all alphabetic characters
+
+    return s
+
+```
+
 ## [3kyu] Can you get the loop ?
 ##### Details
 ```
