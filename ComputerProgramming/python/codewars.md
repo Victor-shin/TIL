@@ -1,3 +1,42 @@
+## [6kyu] Missing Alphabet
+##### Details
+```
+In this Kata you have to create a function,named insertMissingLetters,that takes in a string and outputs the same string processed in a particular way.
+
+The function should insert only after the first occurence of each character of the input string, all the alphabet letters that:
+
+-are NOT in the original string
+-come after the letter of the string you are processing
+
+Each added letter should be in uppercase, the letters of the original string will always be in lowercase.
+
+Example:
+
+input: "holly"
+
+missing letters: "a,b,c,d,e,f,g,i,j,k,m,n,p,q,r,s,t,u,v,w,x,z"
+
+output: "hIJKMNPQRSTUVWXZoPQRSTUVWXZlMNPQRSTUVWXZlyZ"
+
+You don't need to validate input, the input string will always contain a certain amount of lowercase letters (min 1 / max 50).
+```
+
+##### My solution
+```
+_ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+def insert_missing_letters(st):
+    _REFINED_ALPHA = "".join([x for x in list(_ALPHA) if x not in list(st.upper())])
+    
+    r = ""
+    for c in list(st):
+      sub_str = []
+      if c not in list(r):
+          sub_str = [x for x in list(_REFINED_ALPHA) if x > c.upper()] 
+      r += "".join([c] + sub_str)
+    
+    return r
+```
+
 ## [5kyu] Funnel Out A String
 ##### Details
 ```
