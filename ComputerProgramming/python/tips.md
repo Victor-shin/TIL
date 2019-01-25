@@ -1,4 +1,9 @@
 ## TIP
+
+##### __init__.py #####
+- 일반 디렉토리가 아닌 python package디렉토리를 의미합니다.
+- python3.3 이후부터는 쓰지 않아도 됩니다.
+
 ##### Difference between set and list
 - http://stackoverflow.com/questions/12354515/what-is-the-difference-between-sets-and-lists-in-python
 
