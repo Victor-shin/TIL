@@ -52,7 +52,7 @@ Graph 객체의 불변 성격 때문에 동기화 문제가 발생할 위험 없
 filter함수는 특정 버텍스 집합에서 주어진 조건자(predicate)를 만족시키는 버텍스 집합으로 제한한다.
 
 ## mapValues
-mapValues는 각 버텍스(vertex) 속성을 매ㅣㅍㅇ해 vertexId를 변경하지 않게 인덱스를 유지한다.
+mapValues는 각 버텍스(vertex) 속성을 매핑해 vertexId를 변경하지 않게 인덱스를 유지한다.
 
 ## aggregateMessages
 GraphX의 핵심 집계 연산.
